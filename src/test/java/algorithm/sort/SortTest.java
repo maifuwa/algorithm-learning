@@ -26,4 +26,18 @@ public class SortTest {
         BubbleSort.bubbleSortWithFlag(nums);
         assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
     }
+
+    @Test
+    public void testInsertionSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        InsertionSort.insertionSort(nums);
+        assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
+
+    @Test
+    public void testQuickSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        QuickSort.quickSort(nums, 0, nums.length - 1);
+        assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
 }
