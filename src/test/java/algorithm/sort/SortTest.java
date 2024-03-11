@@ -2,6 +2,8 @@ package algorithm.sort;
 
 import static org.junit.Assert.assertArrayEquals;
 
+import java.util.Arrays;
+
 import org.junit.Test;
 
 public class SortTest {
@@ -39,5 +41,26 @@ public class SortTest {
         int[] nums = {5, 2, 9, 1, 5, 6};
         QuickSort.quickSort(nums, 0, nums.length - 1);
         assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
+
+    @Test
+    public void testMergeSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        MergeSort.mergeSort(nums, 0, nums.length - 1);
+        assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
+
+    @Test
+    public void testHeapSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        HeapSort.heapSort(nums);
+        Arrays.stream(nums).forEach(System.out::println);
+    }
+
+    @Test
+    public void testBucketSort() {
+        double[] nums = {0.52, 0.2, 0.92, 0.12, 0.51, 0.62};
+        BucketSort.bucketSort(nums);
+        assertArrayEquals(nums, new double[]{0.12, 0.2, 0.51, 0.52, 0.62, 0.92}, 0.0001);
     }
 }
