@@ -24,6 +24,7 @@ public class QuickSort {
     private static int partition(int[] nums, int left, int right) {
         int i = left, j = right;
         while (i < j) {
+            // 顺序根据基准数(nums[left] | nums[right])而定
             while (i < j && nums[j] >= nums[left]) j--;
             while (i < j && nums[i] <= nums[left]) i++;
             swap(nums, i, j);

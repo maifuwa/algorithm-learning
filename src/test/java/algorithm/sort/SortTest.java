@@ -63,4 +63,25 @@ public class SortTest {
         BucketSort.bucketSort(nums);
         assertArrayEquals(nums, new double[]{0.12, 0.2, 0.51, 0.52, 0.62, 0.92}, 0.0001);
     }
+
+    @Test
+    public void testCountingSortNaive() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        CountingSort.countingSortNaive(nums);
+        assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
+
+    @Test
+    public void testCountingSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        CountingSort.countingSort(nums);
+        assertArrayEquals(Arrays.toString(nums), nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
+
+    @Test
+    public void testRadixSort() {
+        int[] nums = {5, 2, 9, 1, 5, 6};
+        RadixSort.radixSort(nums);
+        assertArrayEquals(nums, new int[]{1, 2, 5, 5, 6, 9});
+    }
 }
